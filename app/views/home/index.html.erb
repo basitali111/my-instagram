@@ -1,0 +1,4 @@
+<h1>This is home page</h1>
+<%if current_user%>
+<%= button_to "Sign_out", destroy_user_session_path, method: :delete %>
+<%end%>
