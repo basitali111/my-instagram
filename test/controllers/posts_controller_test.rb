@@ -18,8 +18,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should create post' do
     assert_difference('Post.count') do
       post posts_url,
-           params: { post: { allow_comments: @post.allow_comments, caption: @post.caption, latitude: @post.latitude,
-                             longtitude: @post.longtitude, show_likes_count: @post.show_likes_count, user_id: @post.user_id } }
+           params: { post:
+
+      { allow_comments: @post.allow_comments, caption: @post.caption, latitude: @post.latitude,
+        longtitude: @post.longtitude, show_likes_count: @post.show_likes_count, user_id: @post.user_id } }
     end
 
     assert_redirected_to post_url(Post.last)
@@ -37,8 +39,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update post' do
     patch post_url(@post),
-          params: { post: { allow_comments: @post.allow_comments, caption: @post.caption, latitude: @post.latitude,
-                            longtitude: @post.longtitude, show_likes_count: @post.show_likes_count, user_id: @post.user_id } }
+          params: { post:
+
+      { allow_comments: @post.allow_comments, caption: @post.caption, latitude: @post.latitude,
+        longtitude: @post.longtitude, show_likes_count: @post.show_likes_count, user_id: @post.user_id } }
     assert_redirected_to post_url(@post)
   end
 
