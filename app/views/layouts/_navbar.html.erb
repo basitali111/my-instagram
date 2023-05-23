@@ -19,7 +19,7 @@
         <%= link_to new_post_path ,class:"text-dark" do %><i class="fa-regular fa-square-plus fa-xl"></i><%end%>
           <i class="fa-regular fa-compass fa-xl"></i>
           <i class="fa-regular fa-heart fa-xl"></i>
-          <%if current_user && current_user.user.profile_pic.attached?%>
+          <%if current_user && current_user.profile_pic.attached?%>
            <%=image_tag current_user.user.profile_pic,class: "img-thumbnail rounded-circle",style:"width:2rem"%>
           <%else%>
            <%=image_tag 'User profile.png',class: "img-thumbnail rounded-circle",style:"width:2rem"%>
