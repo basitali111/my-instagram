@@ -11,10 +11,16 @@
   </head>
 
   <body>
-<%= render 'layouts/navbar'%>
-<div class="d-flex align-items-center justify-content-center mt-4">
+<%if current_user%>
+    <%= render 'layouts/navbar'%>
+<%end%>
+<%
+=begin%>
+ <div class="d-flex align-items-center justify-content-center mt-4">
 <%= render 'suggestions/suggestion_list' %>
-</div>
+</div> 
+<%
+=end%>
     <%= yield %>
   </body>
 </html>
