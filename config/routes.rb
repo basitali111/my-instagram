@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 root 'home#index'
   # Defines the root path route ("/")
   # root "articles#index"
-  post "toggle_like", to: "likes#toggle_like", as: "toggle_like
+  post "toggle_like", to: "likes#toggle_like", as: "toggle_like"
 end
