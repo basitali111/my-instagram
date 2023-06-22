@@ -58,8 +58,11 @@
     <small class="text-muted"><%= time_ago_in_words( post.created_at) %> ago</small>
   </div>
   <div class="card-footer d-flex justify-content-between bg-white">
+     <%= form_with url: comments_path,method: :post do |f|%>
+     <%= f.text_area :comment_body%>
    <input type="text" class="w-75" placeholder="Add a Comment..." style="border:none">
    <a class="text-primary fw-bold" style="text-decoration:none">Post </a>
+   <%end%>
   </div>
 </div>
 
