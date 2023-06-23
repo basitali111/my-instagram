@@ -8,5 +8,5 @@ root 'home#index'
   # root "articles#index"
   post "toggle_like", to: "likes#toggle_like" , as: :toggle_like
 
-  resources :comment, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 end
