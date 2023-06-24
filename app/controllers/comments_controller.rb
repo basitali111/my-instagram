@@ -15,16 +15,14 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-   if(@comment.user == current_user)
-    @comment.destroy
-   end
-   respond_to do |format|
-    format.turbo_stream do
-      render turbo_stream: turbo_stream.remove(
-        "post#{@comment.post_id}ModelComment#{@comment.id}"
-      )
+    @comment.destroy if @comment.user == current_user
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.remove(
+          "post#{@comment.post_id}ModelComment#{@comment.id}"
+        )
+      end
     end
-   end
   end
 
   private
