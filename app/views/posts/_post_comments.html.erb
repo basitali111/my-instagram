@@ -8,7 +8,7 @@
 <% post.comments.last(5).each do |comment| %>
     <p class="card-text m-0"><span class="fw-bold"><%= comment.user.username%></span><%= comment.body %></p>
   <%end%>
-<%end%>
+
 
 
    <!-- Modal -->
@@ -22,10 +22,11 @@
       <div class="modal-body">
       <div class="d-flex flex-column gap-3">
         <% post.comments.each do |comment| %>
-            <%= render "posts/model_comment", comment: comment %>
+            <%= render "posts/modal_comment", comment: comment %>
         <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+<%end%>
