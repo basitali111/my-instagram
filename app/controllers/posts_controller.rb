@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+   redirect_to root_path
   end
 
   # GET /posts/1 or /posts/1.json
@@ -47,12 +47,16 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    @post.destroy
+    @post.likes.destroy_all
+    @post.comments.destroy_all
 
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  # Now you can safely destroy the post
+  @post.destroy
+
+  respond_to do |format|
+    format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+    format.json { head :no_content }
+  end
   end
 
   private
