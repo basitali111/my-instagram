@@ -19,8 +19,34 @@
           <a type="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="fa-regular fa-square-plus fa-xl"></i>
          </a>
-          <i class="fa-regular fa-compass fa-xl"></i>
-          <i class="fa-regular fa-heart fa-xl"></i>
+          <i class="fa-regular fa-compass fa-xl"></i>     
+      <div class="dropstart">
+            <i class="fa-regular fa-heart fa-xl" data-bs-toggle="dropdown" aria-expanded="false"></i>
+               <ul class="dropdown-menu">
+                  <% current_user.follow_requests.each do |fr|%>
+                    <li>
+                      <div class="d-flex justify-content-between ">
+                          <div class="d-flex">
+                              <%=image_tag 'User profile.png',class: "img-thumbnail rounded-circle ",style:"width:2.5rem;"%>
+                                <div class="d-flex flex-column mx-3 justify-content-center ">
+                                <small class="fw-bold" style ="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:10rem;" ><%= link_to fr.follower, class: "a-decoration-none" do %><%= fr.follower.username%><%end%></small>
+                                </div>
+                          </div>
+
+                            <%= button_to accept_follow_path(follow_id:fr.id),class:"btn btn-primary", style:"text-decoration:none" do %>
+                            <small class="fw-bold text-white">Accept</small>
+                                <%end%>
+
+                            <%= button_to decline_follow_path(follow_id:fr.id),class:"btn btn-danger", style:"text-decoration:none" do %>
+                            <small class="fw-bold text-white">Decline</small>
+                                <%end%>
+                        </div>
+                     </li>
+                  <% end %>
+                </ul>
+          </div>
+
+
 
         <div class="dropdown">
             <a class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
