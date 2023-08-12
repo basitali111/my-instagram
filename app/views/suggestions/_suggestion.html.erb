@@ -9,7 +9,12 @@
   </div>
 
     <% if current_user.waiting_followings.include?(suggestion) %>
-       <%= button_to "Cancel", cancel_request_path(user_id:  user.id), method: :delete,class:"btn btn-secondary", data:{turbo: 'false'} %>
+       <%= button_to  cancel_request_path(user_id:  user.id), method: :delete,class:"btn bg-transparent border-0", data:{turbo: 'false'} %>
+      <small class="fw-bold text-secondary">Cancel</small>
+    <%end%>
+    <% else %>
+    <%= button_to  follow_path(user_id: user.id), method: :post, class: "btn bg-transparent border-0" , data:{turbo: 'false'}%>
+    <small class="fw-bold text-primary">Follow</small>
     <%end%>
 
 </div>
