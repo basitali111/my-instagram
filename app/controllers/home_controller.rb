@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
   before_action :set_suggestions
-  def index
-   
-  end
+  def index; end
 
   def set_suggestions
     @suggestions = [current_user.followers]
