@@ -1,6 +1,15 @@
 class HomeController < ApplicationController
   before_action :set_suggestions
-  def index; end
+  before_action :set_feeds
+  def index
+   
+  end
+
+  private
+
+  def set_feeds
+    @feeds = Post.where(user: [current_user,current_user.followings,].flatten).order(created_at: :desc)
+  end
 
   def set_suggestions
     @suggestions = [current_user.followers]
