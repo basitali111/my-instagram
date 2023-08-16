@@ -10,11 +10,12 @@
           <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
             
 
-            <div class="dropstart">
+            <div class="dropdown">
            
-           <%= form_with(url: users_path,method: :get,data:{turbo_frame:"search_results"},class:"d-flex") do |f|%>
+           <%= form_with(url: users_path, method: :get,data:{turbo_frame:"search_results",controller: "search-results"},class:"d-flex") do |f|%>
              
-              <%= f.text_field :search_query,class: "form-control me-2 border-0",type:"search",placeholder:"Search","aria-label"=>"Search",style:"background:#efefef ", "data-bs-toggle"=>"dropdown", "aria-expanded"=>"false"%>
+              <%= f.text_field :search_query,class: "form-control me-2 border-0",type:"search",placeholder:"Search","aria-label"=>"Search",style:"background:#efefef ", "data-bs-toggle"=>"dropdown", "aria-expanded"=>"false",
+              data: {action:"input->search-results#search"}%>
 
 
                <ul class="dropdown-menu p-4 mt-2" style='width:25rem '>

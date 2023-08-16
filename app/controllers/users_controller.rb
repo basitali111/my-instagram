@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user,only: [:show]
+  before_action :set_user, only: [:show]
 
   def index
     if params[:search_query].present?
@@ -8,9 +8,10 @@ class UsersController < ApplicationController
       @users = []
     end
   if turbo_frame_request?
-     render partial:"layouts/search_results",locals:{users:@users}
+     render partial:"layouts/search_results", locals:{users:@users}
   end
 end
+
   def show
    
   end
