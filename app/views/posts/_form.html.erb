@@ -9,12 +9,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex">
-         <div  class="border-end border-secondary mx-2" style ="width:60%;">
+         <div  class="border-end border-secondary mx-2" style ="width:50%;">
           <%= form.file_field :images, multiple: true ,id:"post-images",required: true %>
       </div>
 
 
-      <div style ="width:40%;">
+      <div style ="width:50%;">
       <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
