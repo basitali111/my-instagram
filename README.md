@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="murple_logo.png" alt="Instagram-Clone Logo" width="140" height="auto" />
+
   <br/>
   <h3><b>Instagram Clone</b></h3>
 
