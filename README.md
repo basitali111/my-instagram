@@ -113,10 +113,10 @@ To run the test suite:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 [Basit Ali]
+👤 **Basit Ali**
 
-- GitHub: [https://github.com/basitali111/](#)
-- LinkedIn: [https://www.linkedin.com/in/basit-ali-jobs/](#)
+- GitHub: [@githubhandle](https://github.com/basitali111/)
+- LinkedIn: [LinkedIn]( https://www.linkedin.com/in/basit-ali-jobs/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
