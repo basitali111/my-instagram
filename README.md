@@ -74,7 +74,7 @@ Ensure you have Ruby on Rails and PostgreSQL installed on your local machine.
 
 ```bash
   git clone [https://github.com/basitali111/my-instagram.git]
-  cd instagram-clone
+  cd my-instagram
 ```
 
 ### Install
