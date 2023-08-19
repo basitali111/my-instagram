@@ -83,7 +83,6 @@ Install the required gems:
 
 ```
   bundle install
-  yarn install
 ```
 
 Setup the database:
